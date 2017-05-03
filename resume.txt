@@ -1,5 +1,5 @@
 <span id="a">luzan@baral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p5l33p --><b>education</b>
-Graduate student at Gandaki College of Engineering and Science<br/>
+Bachelor in Software Engineering, GCES, Pokhara<br/>
 <span id="a">luzan@baral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p --><b>skills</b>
 <b>Operating Systems</b>
 &nbsp;GNU/Linux, Windows
@@ -18,5 +18,5 @@ Graduate student at Gandaki College of Engineering and Science<br/>
 &nbsp;Microsoft Office, Office 365, Google Office Suite
 <span id="a">luzan@baral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p5l33p --><b>interests</b>
 &nbsp;Artificial Intelligence, Machine Learning, Data mining, Cryptography, Cloud Computing, FOSS, Human Computer Interaction.
-drwxr-xr-- 2 luzan 4096 May 3 22:14 <a href="index.html" onclick="Typer.append('cd ./')">./</a>
+drwxr-xr-- 2 luzan 4096 May 3 22:14 <a href="index.html" onclick="Typer.append('cd ./')">./home</a>
 <span id="a">luzan@baral</span>:<span id="b">~/bio</span><span id="c">$ </span>
