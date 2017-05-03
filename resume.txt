@@ -1,22 +1,22 @@
-<span id="a">luzan@baral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p5l33p --><b>education</b>
+<span id="a">luzanbaral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p5l33p --><strong>education</strong>
 Bachelor in Software Engineering, GCES, Pokhara<br/>
-<span id="a">luzan@baral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p --><b>skills</b>
-<b>Operating Systems</b>
+<span id="a">luzanbaral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p --><strong>skills</strong>
+<strong>Operating Systems</strong>
 &nbsp;GNU/Linux, Windows
-<b>Programming Languages</b>
+<strong>Programming Languages</strong>
 &nbsp;<em>Backend</em>
 &nbsp;&nbsp;&nbsp;C#, Java, PHP, JavaScript (NodeJS), Python
 &nbsp;<em>Frontend</em>
 &nbsp;&nbsp;&nbsp;HTML, CSS (Bootstrap), JavaScript (ReactJS)
-<b>Tools and Editors</b>
+<strong>Tools and Editors</strong>
 &nbsp;Microsoft Visual Studio, Atom, Unity3D
 &nbsp;Photoshop, Camtasia Video Studio
-<b>Familiar With</b>
+<strong>Familiar With</strong>
 &nbsp;Git VCS
 &nbsp;Gradle, Maven build tools, Android Studio
 &nbsp;Drupal, Joomla, Wordpress CMS
-&nbsp;Microsoft Office, Office 365, Google Office Suite
-<span id="a">luzan@baral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p5l33p --><b>interests</b>
+&nbsp;Microsoft Office, Office 365, Google Office Suite<br/>
+<span id="a">luzanbaral</span>:<span id="b">~/bio</span><span id="c">$ </span><!-- 5l33p5l33p5l33p -->cat &#60; <!-- 5l33p5l33p5l33p5l33p --><strong>interests</strong>
 &nbsp;Artificial Intelligence, Machine Learning, Data mining, Cryptography, Cloud Computing, FOSS, Human Computer Interaction.
 drwxr-xr-- 2 luzan 4096 May 3 22:14 <a href="index.html" onclick="Typer.append('cd ./')">./home</a>
-<span id="a">luzan@baral</span>:<span id="b">~/bio</span><span id="c">$ </span>
+<br/><span id="a">luzanbaral</span>:<span id="b">~/bio</span><span id="c">$ </span>
