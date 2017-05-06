@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sleep Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Want to wake up in a good shape? Find out the perfect bedtime or wake up time to rise feeling refreshed and energized.">
+    <meta property="og:title" content="Sleep Calculator">
+    <meta property="og:description" content="Want to wake up in a good shape? Find out the perfect bedtime or wake up time to rise feeling refreshed and energized.">
+    <meta property="og:site_name" content="Sleep Calculator">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/classListAPI.js"></script>
+    <script src="js/lethargy.js"></script>
+</head>
+<body>
+<section class = "mainWrapper">
+    <header>
+        <img src="images/logo.png" alt="Sleep Calculator"/>
+    </header>
+    <section id="plan">
+        <h1>If I want to wake up at...</h1>
+        <section class="timeWrapper">
+            <div class="highlightTime"></div>
+            <div class="setTime">
+                <div class="settingsWrapper">
+                    <ul class="settings">
+                        <li class="notChosen">8</li>
+                        <li class="notChosen">9</li>
+                        <li class="notChosen">10</li>
+                        <li class="notChosen">11</li>
+                        <li class="notChosen">12</li>
+                        <li class="notChosen">1</li>
+                        <li class="notChosen">2</li>
+                        <li class="notChosen">3</li>
+                        <li class="notChosen">4</li>
+                        <li class="notChosen">5</li>
+                        <li class="notChosen">6</li>
+                        <li class="notChosen">7</li>
+                        <li class="chosen">8</li>
+                        <li class="notChosen">9</li>
+                        <li class="notChosen">10</li>
+                        <li class="notChosen">11</li>
+                        <li class="notChosen">12</li>
+                        <li class="notChosen">1</li>
+                        <li class="notChosen">2</li>
+                        <li class="notChosen">3</li>
+                        <li class="notChosen">4</li>
+                        <li class="notChosen">5</li>
+                        <li class="notChosen">6</li>
+                        <li class="notChosen">7</li>
+                        <li class="notChosen">8</li>
+                    </ul>
+                </div>
+                <div class="settingsWrapper">
+                    <ul class="settings">
+                        <li class="notChosen">00</li>
+                        <li class="notChosen">05</li>
+                        <li class="notChosen">10</li>
+                        <li class="notChosen">15</li>
+                        <li class="notChosen">20</li>
+                        <li class="notChosen">25</li>
+                        <li class="notChosen">30</li>
+                        <li class="notChosen">35</li>
+                        <li class="notChosen">40</li>
+                        <li class="notChosen">45</li>
+                        <li class="notChosen">50</li>
+                        <li class="notChosen">55</li>
+                        <li class="chosen">00</li>
+                        <li class="notChosen">05</li>
+                        <li class="notChosen">10</li>
+                        <li class="notChosen">15</li>
+                        <li class="notChosen">20</li>
+                        <li class="notChosen">25</li>
+                        <li class="notChosen">30</li>
+                        <li class="notChosen">35</li>
+                        <li class="notChosen">40</li>
+                        <li class="notChosen">45</li>
+                        <li class="notChosen">50</li>
+                        <li class="notChosen">55</li>
+                        <li class="notChosen">00</li>
+                    </ul>
+                </div>
+                <div class="settingsWrapper">
+                    <ul class="settings">
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="notChosen"></li>
+                        <li class="chosen">AM</li>
+                        <li class="notChosen">PM</li>
+                        <li class="notChosen"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div id="bedTime">
+            <span></span>
+            <p>When should I go to bed?</p>
+        </div>
+        <p class="mode">If I go to sleep now...</p>
+        <div id="getUpTime">
+            <span></span>
+            <p>When should I get up?</p>
+        </div>
+    </section>
+    <section id="getUp" class="caclResult">
+        <h1>Wake up times</h1>
+        <p class="desc">It takes the average human about 15 minutes to fall asleep.<br>
+            If you go to sleep right now, you should try to wake up at one of the following times:
+        </p>
+        <ul class="instructions">
+            <li class="wakeUpTime">10:45 PM</li>
+            <li class="wakeUpTime">12:15 AM</li>
+            <li class="wakeUpTime">1:45 AM</li>
+            <li class="wakeUpTime">3:15 AM</li>
+            <li class="wakeUpTime prior">4:45 AM</li>
+            <li class="wakeUpTime prior">6:15 AM</li>
+        </ul>
+        <p class="desc">If you wake up at one of these times, you'll rise in between 90-minute sleep cycles.
+            A good night's sleep consists of 5-6 complete sleep cycles.<br>
+	    Try <a rel="nofollow" href="http://www.amazon.com/gp/product/B0093162RM/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B0093162RM&linkCode=as2&tag=sleepcalculator.com-20&linkId=HLY2SOWJXLGONTPG">The Wake-Up Light With Sunrise Simulation</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=sleepcalculator.com-20&l=as2&o=1&a=B0093162RM" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> that provides a pleasant, natural way to start your morning.
+        </p>
+        <p class="calcAgain">Calculate again</p>
+    </section>
+    <section id="goToBed" class="caclResult">
+        <h1>Go to bed times</h1>
+        <p class="desc">It takes the average human about 15 minutes to fall asleep.<br>
+            To wake up refreshed at <span id="wakeUpTime"></span>, you should go to bed at one of the following times:
+        </p>
+        <ul class="instructions">
+            <li class="goToBedTime prior">10:45 PM</li>
+            <li class="goToBedTime prior">12:15 AM</li>
+            <li class="goToBedTime">1:45 AM</li>
+            <li class="goToBedTime">3:15 AM</li>
+            <li class="goToBedTime">4:45 AM</li>
+            <li class="goToBedTime">6:15 AM</li>
+        </ul>
+        <p class="desc">If you wake up at one of these times, you'll rise in between 90-minute sleep cycles.
+            A good night's sleep consists of 5-6 complete sleep cycles.<br>
+	    Try <a rel="nofollow" href="http://www.amazon.com/gp/product/B0093162RM/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B0093162RM&linkCode=as2&tag=sleepcalculator.com-20&linkId=HLY2SOWJXLGONTPG">The Wake-Up Light With Sunrise Simulation</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=sleepcalculator.com-20&l=as2&o=1&a=B0093162RM" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> that provides a pleasant, natural way to start your morning.
+        </p>
+        <p class="calcAgain">Calculate again</p>
+    </section>
+    <section id = "animation">
+        <span id = "sun"></span>
+        <span id = "stars">
+            <span id = "moon"></span>
+        </span>
+    </section>
+    <section id="sleepStages">
+        <div id="button">
+            <span></span>
+            <a href="https://en.m.wikipedia.org/wiki/Sleep#Stages" target="_blank">Sleep Stages</a>
+        </div>
+    </section>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/mouseWheel.js"></script>
+
+</body>
+</html>
