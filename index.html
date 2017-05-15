@@ -47,6 +47,28 @@ THE SOFTWARE.
 		color: #0bc;
 		text-decoration: none;
 	}
+	ul {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    overflow: hidden;
+	    background-color: #333;
+	}
+
+	li {
+	    float: left;
+	}
+
+	li a {
+	    display: block;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: underline overline;
+	}
+	/* Change the link color to #111 (black) on hover */
+	li a:hover {
+	    background-color: #111;
+	}
 	#a {
 		color: #0f0;
 	}
@@ -178,6 +200,22 @@ function t() {
 }
 
 </script>
+<div id="navigation">
+	<ul>
+		<li>
+			<a><span id="a">Direct Links:</span></a>
+		</li>
+		<li>
+			<a href="resume.html" target="_blank">/bio</a>
+		</li>
+		<li>
+			<a href="https://twitter.com/luzanb" target="_blank">/twitter</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/channel/UCM8jTgsMzMmRZS_zd3vAtlg" target="_blank">/youtube</a>
+		</li>
+	</ul>
+</div>
 <div id="console"></div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
