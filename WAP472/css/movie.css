@@ -1,0 +1,137 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    font-size: 8pt;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+body {
+    margin: 0px;
+    background-image: url('../images/movie/background.png');
+    background-repeat: repeat;
+}
+.header {
+    width: 100%;
+    top: 0; 
+    display: flex;
+    justify-content: center;
+    background-image: url('../images/movie/bannerbg.png');
+    background-repeat: repeat-x;
+}
+
+.title {
+    text-align:center;font: bold 24pt Tahoma, Verdana, sans-serif;text-shadow: 2px 2px #999999;
+}
+
+.content {
+    position: relative;
+    width: 800px;
+    border: 4px gray solid;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.left_content {
+    width: 550px;
+    float: left;
+}
+.right_content {
+    width: 250px;
+    float: right;
+    background-color: #A2B964;
+    font-size: 8pt;
+    font-family: Arial;
+}
+
+.float_left {
+    width: 50%;
+    float: left;
+}
+
+.float_right {
+    width: 50%;
+    float: right;
+}
+.top_rotten_bar {
+    display: flex;
+    float: left;
+    width: 100%;
+    background-image: url("../images/movie/rbg.png");
+    background-repeat: repeat-x;
+    text-align: left;
+}
+.top_rotten_bar > span {
+    vertical-align: middle;
+    font-size: 48pt;
+    color: red;
+    font-weight: bold;
+}
+.comment_box {
+    margin: 2%;
+    font-size: 8pt;
+    background-color: #E8DC98;
+    border-color: gray;
+    border-radius: 10px;
+    padding: 8px;
+    border: solid;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.comment_person {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+p img {
+    padding-right: 5px;
+    float: left;
+}
+
+dt {
+    text-align: left;
+    padding: 4pt;
+    font-weight: bold;
+}
+
+dl dd {
+    margin-bottom: 10pt;
+    padding-left: 40px;
+    text-align: left;
+}
+ul {
+    list-style: none;
+}
+.validator {
+    position: relative;
+    float: right;
+    bottom: 60px;
+}
+
+.foot {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: #A2B964;
+    float: bottom;
+    padding: 1px;
+    margin: 0px;
+    text-align: center;
+}
+.contentInside {  
+    display: inline-flex;
+    justify-content: space-between;
+}
+  
+.overallcol1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.overallcol2 { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
