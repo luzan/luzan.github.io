@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(28, 124, 124);
+    padding: 16px 0;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    gap: 16px;
+    background-color: rgb(14, 66, 36);
+    margin: 0;
+}
+
+nav ul li {
+    border-right: 1px solid black;
+    color: white;
+    padding: 16px;
+    font-weight: bold;
+}
+.cols div {
+
+    height: 150px;
+    padding: 8px
+}
+
+#col1 {
+    background-color: #aaa;
+}
+#col2 {
+    background-color: #bbb;
+    flex: 2
+}
+#col3 {
+    background-color: #ccc;
+}
+footer {
+    background-color: rgb(14, 66, 36);
+    padding: 16px 0;
+    color: white;
+}
