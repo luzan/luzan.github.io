@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        let objArr = [{name:"Web Application Programming", code: "WAP"},
+        {name:"Modern programming practice", code: "MPP"},
+        {name:"Fundamental programming practice", code: "FPP"} ];
+        var html = "";
+        $(function() {
+            let selectElem = document.createElement("select");
+            selectElem.id = "courseId";
+            selectElem.name = "course";
+            let mySelect = buildElement($(selectElem), objArr);
+            document.body.append(selectElem);
+        })
+
+        function buildElement(selectElem, objArr) { 
+            var counter = 0;
+            for(let element of objArr){
+                console.log("name" + element.name);
+                html += "<option value=\""+element.code+"\">"+element.name+"</option>";
+            }
+            selectElem.html(html);
+            return selectElem;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
