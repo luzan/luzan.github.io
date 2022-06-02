@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //let arr = ["WAP", "ASD", "ALG", "MPP", "WAA", "MWA"];
+        let objArr = [{ name: "WAP" }, { name: "ASD" }, { name: "ALG" }];
+        var html = "";
+        $(function () {
+            // let ulElement = document.createElement("ul");
+            let ulElement2 = document.createElement("ul");
+            // ulElement.id = "nameUl";
+            ulElement2.id = "nameUl2";
+            // document.body.append(ulElement);
+            document.body.append(ulElement2);
+            // let ulElem = buildULElement($(ulElement), arr);
+            let ulElem2 = buildULElementFromObject($(ulElement2), objArr);
+            $("#addItem").click(function (e) {
+                e.preventDefault();
+                console.log("Add Item clicked");
+                let item = document.getElementById("item").value;
+                if(item != ""){
+                    objArr.push({ name: item });
+                    document.getElementById("warning").innerHTML = "";
+                } else {
+                    document.getElementById("warning").innerHTML = "Enter item to add to list";
+                }
+                buildULElementFromObject($(ulElement2), objArr);
+            });
+
+            $("#sortItems").click(function (e) { 
+                e.preventDefault();
+                console.log("sort is clicked");
+                objArr = objArr.sort(sortObjectArray);
+                buildULElementFromObject($(ulElement2), objArr);
+            });
+            $("#filterItems").click(function (e) { 
+                e.preventDefault();
+                console.log("filterItems is clicked");
+                objArr = objArr.filter(filterArray);
+                buildULElementFromObject($(ulElement2), objArr);
+            });
+        });
+
+        function sortObjectArray(x, y) {
+            if(x.name < y.name) return -1;
+            if(x.name > y.name) return 1;
+            return 0;
+        }
+
+        function filterArray(item) {
+            if(item.name.charAt(0) == 'A' || item.name.charAt(0) == 'a')
+                return true;
+            return false;
+        }
+        // function buildULElement(ulElement, dataArray) {
+        //     html ="";
+        //     for(let i=0; i< dataArray.length; i++) {
+        //         html += "<li>"+dataArray[i]+"</li>";
+        //     }
+        //     ulElement.html(html);
+        //     return ulElement;
+        // }
+
+        function buildULElementFromObject(ulElement, dataArray) {
+            html = "";
+            // get object by key
+            for (let element of dataArray) {
+                html += "<li>";
+                for (let key in element) {
+                    html += element[key];
+                }
+                html += "</li>";
+            }
+            ulElement.html(html);
+            return ulElement;
+        }
+
+
+    </script>
+</head>
+
+<body id="body">
+    <input type="text" id="item" value="" placeholder="Item to add on list" />
+    <input type="button" id="addItem" value="Add">
+    <br />
+    <em id="warning" style="color: red;"></em>
+    <br />
+    <input type="button" id="sortItems" value="Sort">
+    <input type="button" id="filterItems" value="Filter (Starts with A)">
+</body>
+
+</html>
