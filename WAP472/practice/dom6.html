@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function swap(){
+            var nameBtn = document.getElementById("name");
+            var alias = document.getElementById("alias");
+            var temp = nameBtn.value;
+            nameBtn.value = alias.value;
+            alias.value = temp;
+        }
+        function append(){
+            var nameBtn = document.getElementById("name");
+            var alias = document.getElementById("alias");
+            
+            alias.value = alias.value + nameBtn.value;
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        Question 6.
+        ->Create a page with Two text fields, say Name and Alias and one button, Swap and
+        when User clicks on button, swap the text. Name should show the content of Alias and
+        viceversa.
+        ->In the above page, add a button append, when append is clicked, the Alias should have
+        its own content plus the name. 
+    -->
+        <label>Name: <input type="text" id="name" />
+        </label><br><br>
+        <label>Alias: <input type="text" id="alias" />
+        </label><br><br>
+        <button id="swap" onclick="swap()">Swap</button>
+        <button id="append" onclick="append()">Append</button>
+</body>
+</html>

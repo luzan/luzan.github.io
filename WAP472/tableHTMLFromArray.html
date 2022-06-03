@@ -16,6 +16,15 @@
         tableElement.id = "tableId";
         document.body.append(tableElement);
         let myTable = buildTable(objArray,  $(tableElement));
+        $("#addRow").click(function (e) { 
+            e.preventDefault();
+            let tableElement =  $('#tableId');
+            let name = document.getElementById("rowName").value;
+            let age = document.getElementById("rowAge").value;
+            objArray.push({name: name, age: age});
+            console.log(objArray)
+            buildTable(objArray, tableElement);
+        });
     })
 
     function filterArray() {
@@ -26,6 +35,14 @@
         tableElement.html("");
         buildTable(filteredArray, tableElement);
     }
+
+    function sumOfAge() {
+        let initial = 0;
+        let sum = objArray.reduce((x, y) => x + y.age, initial);
+        console.log(sum)
+        document.getElementById("data").innerHTML = "Sum of ages = " + sum;
+    }
+
     function buildTable(objArray, tableElement) {
         let rows = "";
         let headers = "<tr>";
@@ -49,7 +66,13 @@
 </script>
 
 <body>
+    <input type="text" name="rowName" id="rowName" placeholder="Name" />
+    <input type="text" name="rowAge" id="rowAge" placeholder="Age"/>
+    &nbsp;<input type="button" value="Add row" id="addRow"/><br><br>
     <button onclick="filterArray()">Filter Array</button>
+    <button onclick="sumOfAge()">Sum of ages</button>
+    <p id="data"></p>
+
 </body>
 
 </html>
