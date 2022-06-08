@@ -17,8 +17,7 @@ function convertObjectToArray(myobj) {
         }
         else if (typeof (value) == 'object') {
 
-            value = convertObjectToArray(value)
-            //console.log(key, "objarr= ", value)       
+            value = convertObjectToArray(value)  
             for (let y of value) {
                 objArr.push(key + "" + y);
             }
@@ -59,7 +58,7 @@ function getObjectWithA(objarr) {
     return resultArr;
 }
 
-console.log("Minified Object Array: ", getObjectWithA(objarr));
+// console.log("Minified Object Array: ", getObjectWithA(objarr));
 
 function mySort(x, y) {
     return ((x.age < y.age) ? -1 : ((x.age > y.age) ? 1 : 0));
@@ -68,14 +67,14 @@ function mySort(x, y) {
 //3. Get the Oldest person age 
 let persons = [{name:'Ram',age:16}, {name:'Lakshman',age:15}];
 
-function findOldest(persons) {
+function findOldestPerson(persons) {
     let sortArr = persons.sort(mySort);
     let oldest_person_age = sortArr[sortArr.length - 1].age;
 
     return oldest_person_age;
 }
 
-console.log("Oldest person age", findOldest(persons));
+// console.log("Oldest person age", findOldestPerson(persons));
 
 //4. Get the Youngest person name
 
@@ -86,7 +85,7 @@ function findOldest(persons) {
     return youngest_person_name;
 }
 
-console.log("Youngest person name:", findOldest(persons));
+// console.log("Youngest person name:", findOldest(persons));
 
 //5. Find the person whose age is between 16 and 17 years.
 
@@ -102,4 +101,12 @@ function ageBetween(persons) {
 
     return resultArr;
 }
-console.log("Youngest person name:", ageBetween(persons));
+// console.log("Youngest person name:", ageBetween(persons));
+
+module.exports = {
+    convertObjectToArray,
+    getObjectWithA,
+    findOldestPerson,
+    findOldest,
+    ageBetween
+}
