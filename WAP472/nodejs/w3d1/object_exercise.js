@@ -65,7 +65,7 @@ function mySort(x, y) {
 }
 
 //3. Get the Oldest person age 
-let persons = [{name:'Ram',age:16}, {name:'Lakshman',age:15}];
+//let persons = [{name:'Ram',age:16}, {name:'Lakshman',age:15}];
 
 function findOldestPerson(persons) {
     let sortArr = persons.sort(mySort);
