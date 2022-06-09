@@ -18,18 +18,19 @@ app.get("/", function (req, res, next) {
 
 app.post("/", function (req, res, next) {
     data = req.body;
+    console.log(data);
     userCounter++;
     res.redirect("/view");
 });
 
 app.get("/view", function (req, res, next) {
     let html = "";
-    html += createLabel("Name", data["text-input"]);
-    html += createLabel("Description", data["text-area"]);
-    html += createLabel("Gender", data["radio-group"]);
-    html += createLabel("Age Group", data.select);
-    html += createLabel("Hobbies", data["checkbox-group"]);
-    html += "<br><h3>User Count: " + userCounter + "</h3>";
+    html += createSpan("Name", data["name"]);
+    html += createSpan("Description", data["description"]);
+    html += createSpan("Gender", data["gender"]);
+    html += createSpan("Age Group", data.ageGroup);
+    html += createSpan("Hobbies", data["hobbies"]);
+    html += "<h3>User Count: " + userCounter + "</h3>";
     html += "<a href='/'> Go Back to Form</a> <br />";
     html += "<a href='/error'> Go to Error</a> <br />";
     html += "<a href='/no-page'> Gives 404</a> <br />";
@@ -50,6 +51,6 @@ app.use(function (error, req, res, next) {
     res.sendFile(path.join(__dirname, '', 'error.html'));
 });
 
-function createLabel(key, value) {
-    return "<label>" + key + ": " + value + "</label><br>"
+function createSpan(key, value) {
+    return "<span>" + key + ": " + value + "</span><br>"
 }
