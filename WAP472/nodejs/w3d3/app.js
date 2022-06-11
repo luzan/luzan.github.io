@@ -6,7 +6,7 @@ const ejs = require('ejs');
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser())
+app.use(cookieParser('CookieKey1234'))
 
 app.set('view engine', 'ejs');
 app.engine('html', ejs.renderFile);

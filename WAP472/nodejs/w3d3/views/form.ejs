@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <% if (data==null) { %>
+    <% if (data.name==null) { %>
         <form method="post" action="/form" id="id">
             Name : <input id="inputText" name="name" type="text" />
             <br>
@@ -58,7 +58,9 @@
                 <br><label>Hobbies: <%= data.hobbies %></label>
                 <br><br>
                 <h3>User Count: 0</h3>
-                <a href='/'> Go Back to Form</a>
+                <a href='/form/reset'> Reset Form</a>
+                <br />
+                <a href='/logout'> Logout</a>
                 <br />
                 <a href='/error'> Go to Error</a>
                 <br />
