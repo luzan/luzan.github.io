@@ -38,17 +38,57 @@ body {
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  color: #0f0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #0bc;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 #navigation ul {
   list-style-type: none;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  width: 100%;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Projects Dropdown */
@@ -166,14 +206,59 @@ a:hover {
     font-size: 14px;
   }
   
-  #navigation ul {
-    flex-direction: column;
-    align-items: center;
+  .hamburger {
+    display: flex;
   }
   
-  #navigation li a {
-    margin: 0.25rem;
-    padding: 0.75rem 1rem;
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    border-top: 1px solid #333;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-menu li {
+    margin: 0.5rem 0;
+  }
+  
+  .nav-menu li a {
+    display: block;
+    padding: 1rem 2rem;
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .projects-dropdown .dropdown-menu {
+    position: static;
+    display: none !important;
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .projects-dropdown.active .dropdown-menu {
+    display: block !important;
+  }
+  
+  .dropdown-menu li a {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    color: #0bc;
   }
 }
 

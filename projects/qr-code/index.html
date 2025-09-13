@@ -3,8 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator - College Pamphlets</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Free QR Code Generator - Create QR Codes Instantly | Never Expires</title>
+    <meta name="description" content="Generate free QR codes instantly for URLs, text, WiFi, and more. No registration required, never expires, print-ready. Create custom QR codes with multiple links and YouTube videos.">
+    <meta name="keywords" content="QR code generator, free QR code, create QR code, QR code maker, QR code creator, instant QR code, QR code online, QR code free, QR code never expires, QR code print ready, QR code multiple links, QR code YouTube videos">
+    <meta name="author" content="Luzan Baral">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free QR Code Generator - Create QR Codes Instantly">
+    <meta property="og:description" content="Generate free QR codes instantly for URLs, text, WiFi, and more. No registration required, never expires, print-ready.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luzan.github.io/projects/qr-code/index.html">
+    <meta property="og:image" content="https://luzan.github.io/projects/qr-code/qr-code-generator-preview.jpg">
+    <meta property="og:site_name" content="Luzan Baral - QR Code Generator">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free QR Code Generator - Create QR Codes Instantly">
+    <meta name="twitter:description" content="Generate free QR codes instantly for URLs, text, WiFi, and more. No registration required, never expires, print-ready.">
+    <meta name="twitter:image" content="https://luzan.github.io/projects/qr-code/qr-code-generator-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://luzan.github.io/projects/qr-code/index.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free QR Code Generator",
+      "description": "Generate free QR codes instantly for URLs, text, WiFi, and more. No registration required, never expires, print-ready.",
+      "url": "https://luzan.github.io/projects/qr-code/index.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Luzan Baral",
+        "url": "https://luzan.github.io"
+      },
+      "featureList": [
+        "Generate QR codes instantly",
+        "No registration required",
+        "Never expires",
+        "Print ready",
+        "Multiple link support",
+        "YouTube video QR codes",
+        "Custom colors and styling",
+        "Free to use"
+      ],
+      "screenshot": "https://luzan.github.io/projects/qr-code/qr-code-generator-preview.jpg"
+    }
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js?v=1.0"></script>
     <style>
         * {
             margin: 0;
@@ -63,6 +131,7 @@
             font-weight: 600;
             margin-bottom: 8px;
             color: #374151;
+            font-size: 14px;
         }
 
         input[type="url"], input[type="text"], select {
@@ -70,14 +139,19 @@
             padding: 12px 16px;
             border: 2px solid #e5e7eb;
             border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.2s;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            background: white;
         }
 
         input[type="url"]:focus, input[type="text"]:focus, select:focus {
             outline: none;
             border-color: #4f46e5;
             box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        input[type="url"]::placeholder, input[type="text"]::placeholder {
+            color: #9ca3af;
         }
 
         .size-options {
@@ -91,10 +165,39 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .size-option:hover {
+            border-color: #d1d5db;
+            background: #f9fafb;
         }
 
         .size-option input[type="radio"] {
             width: auto;
+            transform: scale(1.1);
+        }
+
+        .size-option label {
+            margin: 0;
+            font-size: 14px;
+            color: #374151;
+            cursor: pointer;
+        }
+
+        .size-option input[type="radio"]:checked + label {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+
+        .size-option:has(input[type="radio"]:checked) {
+            border-color: #4f46e5;
+            background-color: #f0f4ff;
         }
 
         .generate-btn {
@@ -465,6 +568,145 @@
             font-size: 12px;
             line-height: 1.4;
         }
+        
+        /* FAQ Section Styles */
+        .faq-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .faq-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4f46e5;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* WiFi Section Styles */
+        .wifi-info-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 16px;
+        }
+        
+        .wifi-info-section h4 {
+            color: #374151;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .wifi-info-section label {
+            display: block;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        
+        .wifi-info-section input[type="text"],
+        .wifi-info-section input[type="password"],
+        .wifi-info-section select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+        
+        .wifi-info-section input[type="text"]:focus,
+        .wifi-info-section input[type="password"]:focus,
+        .wifi-info-section select:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        .wifi-info-section input[type="text"]::placeholder,
+        .wifi-info-section input[type="password"]::placeholder {
+            color: #9ca3af;
+        }
+        
+        .wifi-checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .wifi-checkbox-container:hover {
+            border-color: #d1d5db;
+        }
+        
+        .wifi-checkbox-container input[type="checkbox"] {
+            margin: 0 8px 0 0;
+            transform: scale(1.1);
+        }
+        
+        .wifi-checkbox-container label {
+            margin: 0;
+            font-size: 14px;
+            color: #374151;
+            cursor: pointer;
+        }
+        
+        .wifi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .wifi-single-field {
+            margin-bottom: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .wifi-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .wifi-info-section {
+                padding: 16px;
+            }
+            
+            .wifi-info-section h4 {
+                font-size: 1rem;
+            }
+        }
 
         @media (max-width: 768px) {
             .header h1 {
@@ -496,6 +738,23 @@
                 font-size: 0.9rem;
             }
             
+            .faq-section {
+                margin-top: 2rem;
+                padding: 1rem;
+            }
+            
+            .faq-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .faq-item {
+                padding: 0.75rem;
+            }
+            
+            .faq-item h3 {
+                font-size: 1rem;
+            }
+            
             .feature p {
                 font-size: 11px;
             }
@@ -512,8 +771,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📱 QR Code Generator</h1>
-            <p>Create permanent QR codes for college pamphlets and materials</p>
+            <h1>📱 Free QR Code Generator - Create QR Codes Instantly</h1>
+            <p>Generate high-quality QR codes for URLs, text, WiFi, and more. No registration required, never expires, and completely free to use. Perfect for business cards, flyers, and marketing materials.</p>
         </div>
 
         <div class="main-content">
@@ -524,6 +783,7 @@
                         <option value="single">Single URL</option>
                         <option value="multiple">Multiple Links (Landing Page)</option>
                         <option value="videos">Multiple Videos (YouTube)</option>
+                        <option value="wifi">WiFi Network</option>
                     </select>
                 </div>
 
@@ -621,6 +881,50 @@
                     <button type="button" onclick="previewVideoPage()" class="preview-btn" style="display: none;">👁️ Preview Video Page</button>
                 </div>
 
+                <div class="form-group" id="wifiGroup" style="display: none;">
+                    <label>WiFi Network Settings</label>
+                    
+                    <div class="wifi-info-section">
+                        <h4>Network Information</h4>
+                        
+                        <div class="wifi-grid">
+                            <div>
+                                <label for="wifiNetworkName">Network Name (SSID) *</label>
+                                <input type="text" id="wifiNetworkName" placeholder="e.g. My WiFi Network" required>
+                            </div>
+                            <div>
+                                <label for="wifiPassword">Password *</label>
+                                <input type="password" id="wifiPassword" placeholder="e.g. mypassword123" required>
+                            </div>
+                        </div>
+                        
+                        <div class="wifi-grid">
+                            <div>
+                                <label for="wifiEncryption">Encryption Type</label>
+                                <select id="wifiEncryption">
+                                    <option value="WPA">WPA</option>
+                                    <option value="WPA2" selected>WPA2</option>
+                                    <option value="WPA3">WPA3</option>
+                                    <option value="WEP">WEP</option>
+                                    <option value="nopass">None (Open Network)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="wifiHidden">Network Visibility</label>
+                                <div class="wifi-checkbox-container">
+                                    <input type="checkbox" id="wifiHidden">
+                                    <label for="wifiHidden">Hidden Network</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wifi-single-field">
+                            <label for="wifiQrName">QR Code Name (optional)</label>
+                            <input type="text" id="wifiQrName" placeholder="e.g. Office WiFi QR">
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="filename">Download Filename (optional)</label>
                     <input type="text" id="filename" placeholder="cs-department-qr">
@@ -690,6 +994,39 @@
                     <p>No limits, no tracking, no accounts needed</p>
                 </div>
             </div>
+            
+            <!-- FAQ Section for SEO -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>Is this QR code generator really free?</h3>
+                    <p>Yes! Our QR code generator is completely free to use with no hidden costs, registration requirements, or usage limits.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do the QR codes expire?</h3>
+                    <p>No, the QR codes generated are static and never expire. They will work forever as long as the content they point to remains accessible.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use these QR codes for commercial purposes?</h3>
+                    <p>Absolutely! You can use the generated QR codes for any purpose including commercial use, marketing materials, business cards, and more.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What types of content can I create QR codes for?</h3>
+                    <p>You can create QR codes for URLs, plain text, multiple links, YouTube videos, WiFi credentials, and more. Our generator supports various content types.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are the QR codes print-ready?</h3>
+                    <p>Yes! The generated QR codes are high-resolution and perfect for printing on business cards, flyers, posters, and other marketing materials.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I create WiFi QR codes?</h3>
+                    <p>Absolutely! You can generate QR codes for WiFi networks that allow users to connect instantly by scanning. Just select "WiFi Network" from the QR Code Type dropdown.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do WiFi QR codes work?</h3>
+                    <p>When someone scans a WiFi QR code, their device automatically connects to the network using the stored credentials. No need to manually enter the network name and password.</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -708,17 +1045,19 @@
             }
         });
 
-        // Toggle between single, multiple, and videos URL inputs
+        // Toggle between single, multiple, videos, and wifi URL inputs
         function toggleUrlInputs() {
             const urlType = document.getElementById('urlType').value;
             const singleGroup = document.getElementById('singleUrlGroup');
             const multipleGroup = document.getElementById('multipleUrlGroup');
             const videosGroup = document.getElementById('videosGroup');
+            const wifiGroup = document.getElementById('wifiGroup');
             
             // Hide all groups first
             singleGroup.style.display = 'none';
             multipleGroup.style.display = 'none';
             videosGroup.style.display = 'none';
+            wifiGroup.style.display = 'none';
             
             // Show the selected group
             if (urlType === 'single') {
@@ -727,6 +1066,8 @@
                 multipleGroup.style.display = 'block';
             } else if (urlType === 'videos') {
                 videosGroup.style.display = 'block';
+            } else if (urlType === 'wifi') {
+                wifiGroup.style.display = 'block';
             }
             
             // Hide previous results when switching modes
@@ -1198,6 +1539,28 @@
                 
                 console.log('Generated video URL:', url);
                 showSuccess(`QR code will point to video collection with ${videos.length} videos`);
+            } else if (urlType === 'wifi') {
+                // WiFi mode - generate WiFi QR code
+                const networkName = document.getElementById('wifiNetworkName').value.trim();
+                const password = document.getElementById('wifiPassword').value.trim();
+                const encryption = document.getElementById('wifiEncryption').value;
+                const hidden = document.getElementById('wifiHidden').checked;
+                
+                if (!networkName || !password) {
+                    showError('Please fill in the Network Name and Password.');
+                    return;
+                }
+                
+                // Generate WiFi QR code string
+                let wifiString = `WIFI:T:${encryption};S:${networkName};P:${password};`;
+                if (hidden) {
+                    wifiString += 'H:true;';
+                }
+                wifiString += ';';
+                
+                url = wifiString;
+                console.log('Generated WiFi string:', url);
+                showSuccess('WiFi QR code generated! Users can scan to connect to your network.');
             }
 
             const size = parseInt(document.querySelector('input[name="size"]:checked').value);
@@ -1244,6 +1607,8 @@
                     document.querySelector('#resultSection p').textContent = 'This QR code will never expire and links to a dynamic landing page with your links.';
                 } else if (urlType === 'videos') {
                     document.querySelector('#resultSection p').textContent = 'This QR code will never expire and links to a video collection with thumbnails and custom colors.';
+                } else if (urlType === 'wifi') {
+                    document.querySelector('#resultSection p').textContent = 'This QR code will never expire and allows users to connect to your WiFi network instantly.';
                 } else {
                     document.querySelector('#resultSection p').textContent = 'This QR code will never expire and links directly to your website.';
                 }
@@ -1282,6 +1647,10 @@
             if (urlType === 'videos') {
                 const qrNameInput = document.getElementById('qrName');
                 filename = qrNameInput.value.trim() || 'video-qr-code';
+            } else if (urlType === 'wifi') {
+                const wifiQrNameInput = document.getElementById('wifiQrName');
+                const networkName = document.getElementById('wifiNetworkName').value.trim();
+                filename = wifiQrNameInput.value.trim() || `${networkName}-wifi-qr`.replace(/[^a-zA-Z0-9-]/g, '-');
             } else {
                 const filenameInput = document.getElementById('filename');
                 filename = filenameInput.value.trim() || 'qr-code';
