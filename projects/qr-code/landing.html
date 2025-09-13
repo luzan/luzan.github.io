@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .links-container {
+            padding: 32px;
+        }
+        
+        .link-item {
+            display: block;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            color: #1e293b;
+            transition: all 0.3s ease;
+        }
+        
+        .link-item:hover {
+            background: #4f46e5;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+        }
+        
+        .link-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .link-url {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            word-break: break-all;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        /* Video Collection Styles */
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #ffffff;
+        }
+        
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+        
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover .play-button {
+            transform: scale(1);
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+        
+        .video-description {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .watch-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .watch-button:hover {
+            background: var(--primary-color);
+            opacity: 0.9;
+        }
+        
+        /* Update header colors for video mode */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .error-message {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #fecaca;
+            margin: 20px;
+            text-align: center;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4f46e5;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔗 Quick Links</h1>
+            <p>Tap any link below to visit</p>
+        </div>
+        
+        <div id="content">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading your links...</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by QR Code Generator</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to parse URL parameters
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            const type = params.get('type');
+            
+            if (type === 'videos') {
+                return parseVideoParams(params);
+            } else {
+                return parseLinkParams(params);
+            }
+        }
+        
+        function parseLinkParams(params) {
+            const links = [];
+            
+            // Look for title1, link1, title2, link2, etc.
+            let i = 1;
+            while (params.has(`title${i}`) && params.has(`link${i}`)) {
+                const title = decodeURIComponent(params.get(`title${i}`));
+                const url = decodeURIComponent(params.get(`link${i}`));
+                
+                // Validate URL
+                if (isValidURL(url)) {
+                    links.push({ title, url });
+                }
+                
+                i++;
+            }
+            
+            return links;
+        }
+        
+        function parseVideoParams(params) {
+            const pageTitle = params.get('title') || 'Video Collection';
+            const pageDescription = params.get('description') || 'Check out these amazing videos!';
+            const qrName = params.get('qrName') || 'Video QR Code';
+            const primaryColor = params.get('primaryColor') || '#4f46e5';
+            const secondaryColor = params.get('secondaryColor') || '#ffffff';
+            const videoCount = parseInt(params.get('videoCount')) || 0;
+            
+            const videos = [];
+            for (let i = 1; i <= videoCount; i++) {
+                const title = params.get(`video${i}Title`);
+                const description = params.get(`video${i}Description`);
+                const url = params.get(`video${i}Url`);
+                const videoId = params.get(`video${i}Id`);
+                
+                if (title && url && videoId) {
+                    videos.push({
+                        title: decodeURIComponent(title),
+                        description: decodeURIComponent(description || ''),
+                        url: decodeURIComponent(url),
+                        videoId: videoId
+                    });
+                }
+            }
+            
+            return {
+                type: 'videos',
+                pageTitle: decodeURIComponent(pageTitle),
+                pageDescription: decodeURIComponent(pageDescription),
+                qrName: decodeURIComponent(qrName),
+                primaryColor: primaryColor,
+                secondaryColor: secondaryColor,
+                videos: videos
+            };
+        }
+        
+        // Function to validate URL
+        function isValidURL(string) {
+            try {
+                const url = new URL(string);
+                return url.protocol === 'http:' || url.protocol === 'https:';
+            } catch (_) {
+                return false;
+            }
+        }
+        
+        // Function to generate the content HTML
+        function generateContentHTML(data) {
+            if (data.type === 'videos') {
+                return generateVideoHTML(data);
+            } else {
+                return generateLinksHTML(data);
+            }
+        }
+        
+        // Function to generate the links HTML
+        function generateLinksHTML(links) {
+            if (links.length === 0) {
+                return `
+                    <div class="error-message">
+                        <h3>No Links Found</h3>
+                        <p>This QR code doesn't contain any valid links. Please check the QR code generation.</p>
+                    </div>
+                `;
+            }
+            
+            return `
+                <div class="links-container">
+                    ${links.map(link => `
+                        <a href="${link.url}" target="_blank" class="link-item">
+                            <div class="link-title">${link.title}</div>
+                            <div class="link-url">${link.url}</div>
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        // Function to generate video collection HTML
+        function generateVideoHTML(data) {
+            if (data.videos.length === 0) {
+                return `
+                    <div class="error-message">
+                        <h3>No Videos Found</h3>
+                        <p>This QR code doesn't contain any valid videos. Please check the QR code generation.</p>
+                    </div>
+                `;
+            }
+            
+            // Update page title and description
+            document.querySelector('.header h1').textContent = data.pageTitle;
+            document.querySelector('.header p').textContent = data.pageDescription;
+            
+            // Apply custom colors
+            document.documentElement.style.setProperty('--primary-color', data.primaryColor);
+            document.documentElement.style.setProperty('--secondary-color', data.secondaryColor);
+            
+            return `
+                <div class="videos-container">
+                    ${data.videos.map(video => `
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg" 
+                                     alt="${video.title}" 
+                                     onerror="this.src='https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg'">
+                                <div class="play-overlay">
+                                    <div class="play-button">▶</div>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">${video.title}</h3>
+                                <p class="video-description">${video.description}</p>
+                                <a href="${video.url}" target="_blank" class="watch-button">Watch on YouTube</a>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        // Main function to load and display content
+        function loadContent() {
+            const contentDiv = document.getElementById('content');
+            const data = getUrlParams();
+            
+            // Simulate loading delay for better UX
+            setTimeout(() => {
+                contentDiv.innerHTML = generateContentHTML(data);
+            }, 500);
+        }
+        
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', loadContent);
+        
+        // Also handle direct navigation
+        window.addEventListener('load', loadContent);
+    </script>
+</body>
+</html>
