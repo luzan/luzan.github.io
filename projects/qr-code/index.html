@@ -567,16 +567,12 @@
                             </div>
                         </div>
                         
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
-                            <div>
-                                <label for="qrName">QR Code Name</label>
-                                <input type="text" id="qrName" placeholder="e.g. Birthday QR Code">
-                            </div>
-                            <div>
-                                <label for="maxVideos">Max Videos (1-4)</label>
-                                <input type="number" id="maxVideos" value="4" min="1" max="4">
-                            </div>
+                        <div style="margin-bottom: 16px;">
+                            <label for="qrName">QR Code Name</label>
+                            <input type="text" id="qrName" placeholder="e.g. Birthday QR Code">
+                            <p style="color: #6b7280; font-size: 12px; margin-top: 4px;">This will be used as the filename when downloading your QR code</p>
                         </div>
+                        <p style="color: #6b7280; font-size: 12px; margin-bottom: 16px;">📝 Note: You can add up to 4 videos maximum</p>
                     </div>
 
                     <div class="color-customization">
@@ -886,7 +882,6 @@
 
         function addVideo() {
             const videoUrl = document.getElementById('videoUrl').value.trim();
-            const maxVideos = parseInt(document.getElementById('maxVideos').value);
             const videosContainer = document.getElementById('videosContainer');
             
             if (!videoUrl) {
@@ -894,8 +889,8 @@
                 return;
             }
 
-            if (videosContainer.children.length >= maxVideos) {
-                showError(`Maximum ${maxVideos} videos allowed`);
+            if (videosContainer.children.length >= 4) {
+                showError('Maximum 4 videos allowed');
                 return;
             }
 
@@ -1281,8 +1276,16 @@
                 return;
             }
 
-            const filenameInput = document.getElementById('filename');
-            let filename = filenameInput.value.trim() || 'qr-code';
+            const urlType = document.getElementById('urlType').value;
+            let filename = '';
+            
+            if (urlType === 'videos') {
+                const qrNameInput = document.getElementById('qrName');
+                filename = qrNameInput.value.trim() || 'video-qr-code';
+            } else {
+                const filenameInput = document.getElementById('filename');
+                filename = filenameInput.value.trim() || 'qr-code';
+            }
             
             // Remove file extension if user added one
             filename = filename.replace(/\.(png|svg|jpg|jpeg)$/i, '');
