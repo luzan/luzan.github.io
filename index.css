@@ -1,47 +1,367 @@
+/* Modern Terminal-Style Design */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #000
-}
-#console {
-  font-family: courier, monospace;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
   color: #fff;
-  width:750px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:40px;
-  font-size:14px;
+  line-height: 1.6;
+  min-height: 100vh;
 }
+
+/* Terminal Container */
+#console {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  min-height: 400px;
+  overflow-y: auto;
+}
+
+/* Modern Navigation */
+#navigation {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #333;
+}
+
+#navigation ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Projects Dropdown */
+.projects-dropdown {
+  position: relative;
+}
+
+.projects-dropdown .dropdown-menu {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid #333;
+  border-radius: 8px;
+  min-width: 200px;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projects-dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #0bc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  margin: 0;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(11, 188, 204, 0.1);
+  color: #00ff88;
+}
+
+/* Ensure dropdown is hidden by default */
+.dropdown-menu {
+  display: none !important;
+}
+
+/* Show dropdown only on hover */
+.projects-dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+#navigation li {
+  margin: 0;
+}
+
+#navigation li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: #0bc;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#navigation li a:hover {
+  background: linear-gradient(45deg, #0bc, #00ff88);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 188, 204, 0.3);
+}
+
+#navigation li a span {
+  font-weight: bold;
+  color: #0f0;
+}
+
+/* Links */
 a {
   color: #0bc;
   text-decoration: none;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  transition: color 0.3s ease;
 }
 
-li {
-    float: left;
+a:hover {
+  color: #00ff88;
 }
 
-li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: underline overline;
-}
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
-}
+/* Terminal Colors */
 #a {
   color: #0f0;
+  font-weight: bold;
 }
+
+#b {
+  color: #ff0096;
+}
+
 #c {
   color: #0bc;
 }
-#b {
-  color: #ff0096;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #console {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 14px;
+  }
+  
+  #navigation ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #navigation li a {
+    margin: 0.25rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #console {
+    margin: 0.5rem;
+    padding: 0.75rem;
+    font-size: 13px;
+  }
+}
+
+/* Typing Animation Enhancement */
+.typing-cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Content Sections */
+.content-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid #0bc;
+}
+
+.content-section h2 {
+  color: #0f0;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+}
+
+.content-section p {
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+/* Project Cards */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(11, 188, 204, 0.2);
+  border-color: #0bc;
+}
+
+.project-card h3 {
+  color: #0f0;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(11, 188, 204, 0.1);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  background: rgba(11, 188, 204, 0.2);
+  transform: scale(1.05);
+}
+
+/* Tools Grid Layout */
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Footer Styles */
+#footer {
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid #333;
+  margin-top: 4rem;
+  padding: 2rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  border-radius: 50%;
+  color: #0bc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: linear-gradient(45deg, #0bc, #00ff88);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 188, 204, 0.3);
+  border-color: #0bc;
+}
+
+.social-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-text {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.footer-text p {
+  margin: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .social-links {
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .footer-content {
+    padding: 0 1rem;
+  }
 }
